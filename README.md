@@ -2,7 +2,21 @@
 
 Sample spring boot reactive programming. 
 
-### Sample Request
+Features:
+
+1. Used RouterFunction instead of RestControllers. 
+2. Added Flyway configuration for schema migration
+3. r2dbc H2 for database  
+
+### Gradle Build
+
+````
+./gradlew clean build -xtest
+````
+
+** Note: Unit test case are in-progress. **
+
+### Sample Request to test
 
 Add an employee
 ````
@@ -32,9 +46,9 @@ curl -i -X DELETE -H 'Content-Type: application/json' http://localhost:8080/rest
 
 ### Swagger 
 
-Annotate RouterFunction with RouterOperation to show operations in swagger.
+Add operationId, tags in the RouterFunction to show operations in swagger.
 
-https://springdoc.org/#spring-webflux-support
+* [spring-webflux-support](https://springdoc.org/#spring-webflux-support)
 
 ````
 http://localhost:8080/swagger-ui.html
